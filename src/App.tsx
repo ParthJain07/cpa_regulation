@@ -1,12 +1,31 @@
 import React, { useState } from 'react';
-import { questions } from './data/questions';
+import { modules } from './data/modules';
 import { QuestionCard } from './components/QuestionCard';
 import { ResultsSummary } from './components/ResultsSummary';
 import './index.css';
 
 const App: React.FC = () => {
+  const [activeModuleId, setActiveModuleId] = useState<string>(modules[0].id);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const activeModule = modules.find(m => m.id === activeModuleId) || modules[0];
+  const questions = activeModule.questions;
+
+  const handleModuleChange = (moduleId: string) => {
+    // If they have started answering, warn them about switching
+    const answeredCount = Object.keys(answers).length;
+    if (answeredCount > 0 && !isSubmitted) {
+      if (!window.confirm("You have an exam in progress. Switching modules will clear your answers. Proceed?")) {
+        return;
+      }
+    }
+    
+    setActiveModuleId(moduleId);
+    setAnswers({});
+    setIsSubmitted(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleSelectOption = (questionId: number, optionIndex: number) => {
     setAnswers(prev => ({
@@ -16,7 +35,6 @@ const App: React.FC = () => {
   };
 
   const handleSubmit = () => {
-    // Optional: add a confirmation if not all questions are answered
     const answeredCount = Object.keys(answers).length;
     if (answeredCount < questions.length) {
       if (!window.confirm(`You have only answered ${answeredCount} out of ${questions.length} questions. Are you sure you want to submit?`)) {
@@ -28,7 +46,7 @@ const App: React.FC = () => {
   };
 
   const handleRetake = () => {
-    if (window.confirm("Are you sure you want to clear your answers and retake the exam?")) {
+    if (window.confirm("Are you sure you want to clear your answers and retake this module?")) {
       setAnswers({});
       setIsSubmitted(false);
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -59,11 +77,27 @@ const App: React.FC = () => {
   return (
     <div className="app-container">
       <header className="app-header">
-        <h1>CPA REG Exam Practice</h1>
-        <p>Module 1: Filing Requirements and Filing Status</p>
+        <h1>CPA REG Study Journey</h1>
+        <p>Interactive Practice Exams</p>
       </header>
 
+      <nav className="module-tabs">
+        {modules.map(m => (
+          <button
+            key={m.id}
+            className={`tab-btn ${activeModuleId === m.id ? 'active' : ''}`}
+            onClick={() => handleModuleChange(m.id)}
+          >
+            {m.id}: {m.title.split(' ').slice(0, 2).join(' ')}...
+          </button>
+        ))}
+      </nav>
+
       <main className="main-content">
+        <div className="module-title-banner">
+          <h2>{activeModule.id} - {activeModule.title}</h2>
+        </div>
+
         {isSubmitted ? (
           <ResultsSummary
             score={score}
@@ -104,7 +138,7 @@ const App: React.FC = () => {
             </button>
           ) : (
             <button className="btn secondary-btn" onClick={handleRetake}>
-              Retake Exam
+              Retake Module
             </button>
           )}
         </div>

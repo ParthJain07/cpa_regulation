@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Question } from '../data/questions';
+import type { Question } from '../data/r1_questions';
 
 interface QuestionCardProps {
   question: Question;
@@ -25,7 +25,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       <p className="question-text">{question.text}</p>
 
       <div className="options-container">
-        {question.options.map((option, index) => {
+        {question.options.map((option: string, index: number) => {
           let optionClass = 'option';
           if (isSubmitted) {
             if (index === question.correctAnswer) {
