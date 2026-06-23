@@ -15,6 +15,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 2,
     explanation: {
       why: "The basis of purchased property is its cost. Cost includes the purchase price, sales tax, freight, installation, and any other costs to place the asset in service.",
+      whyIncorrect: "FMV is used for inherited property, not purchased. Cost plus improvements is the 'adjusted basis' later in life, not the initial general basis. The seller's basis is completely irrelevant to a purchaser in an arm's-length transaction.",
       how: "Add the purchase price to all acquisition/installation costs.",
       when: "When initially recording the basis of a newly purchased asset.",
       source: "IRC §1012"
@@ -33,6 +34,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 3,
     explanation: {
       why: "For calculating a gain, the basis of gifted property is a carryover of the donor's adjusted basis, increased by any gift tax paid attributable to the net appreciation.",
+      whyIncorrect: "'Always the donor's basis' ignores the gift tax adjustment. 'Always the FMV' applies to inherited property. 'The lesser' is the rule for determining basis for a *loss*, not a gain.",
       how: "Use the donor's adjusted basis. (The FMV rule only applies when calculating a loss if FMV < Basis at time of gift).",
       when: "When a taxpayer sells property received as a gift at a gain.",
       source: "IRC §1015(a)"
@@ -51,6 +53,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "Inherited property generally gets a 'stepped-up' basis to the FMV at the date of death (or the alternate valuation date if elected by the executor).",
+      whyIncorrect: "The decedent's basis applies to gifts, not inheritances. Zero is incorrect. The date of distribution is irrelevant; basis is pegged to the date of death or alternate valuation date.",
       how: "Check the estate tax return or valuation at the date of death.",
       when: "When determining basis for property transferred upon death.",
       source: "IRC §1014"
@@ -68,7 +71,8 @@ export const r2Questions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: {
-      why: "Capital assets include all property held by the taxpayer EXCEPT inventory, accounts receivable, depreciable business property, real business property, and certain creative works.",
+      why: "Capital assets include all property held by the taxpayer EXCEPT inventory, accounts receivable, depreciable business property, real business property, and certain creative works. Therefore, investment stock is a capital asset.",
+      whyIncorrect: "Inventory and A/R are ordinary income assets. Depreciable business property is a Section 1231 asset, not a capital asset.",
       how: "Classify the asset. Stock is investment property, thus a capital asset. Business property is Sec 1231, not a capital asset.",
       when: "When categorizing assets for sale or exchange.",
       source: "IRC §1221"
@@ -87,6 +91,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 2,
     explanation: {
       why: "A capital asset must be held for more than one year (i.e., at least one year and one day) to qualify for long-term capital gain treatment.",
+      whyIncorrect: "6 months was an old historical rule. 'Exactly 1 year' is short-term; it must be *more* than 1 year. 2 years is not required.",
       how: "Compare the acquisition date to the sale date. It must exceed 365/366 days.",
       when: "When determining if preferential tax rates apply to a gain.",
       source: "IRC §1222(3)"
@@ -105,6 +110,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "Residential rental property is depreciated over 27.5 years using the straight-line method.",
+      whyIncorrect: "15 years applies to qualified improvement property. 39 years applies to commercial/nonresidential real estate. 40 years applies under the Alternative Depreciation System (ADS).",
       how: "Identify the property type. If 80%+ of gross rental income is from dwelling units, use 27.5 years.",
       when: "When placing a residential rental building (not land) into service.",
       source: "IRC §168(c)"
@@ -123,6 +129,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 2,
     explanation: {
       why: "Nonresidential real property placed in service after May 13, 1993, is depreciated over 39 years using the straight-line method.",
+      whyIncorrect: "27.5 years is for residential. 31.5 years was the old commercial rule before 1993. 40 years is for ADS.",
       how: "Use the 39-year straight-line MACRS tables.",
       when: "When depreciating commercial buildings like offices or warehouses.",
       source: "IRC §168(c)"
@@ -141,6 +148,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 2,
     explanation: {
       why: "The mid-quarter convention applies if more than 40% of the total basis of all personal property placed in service during the year is placed in service during the 4th quarter.",
+      whyIncorrect: "Half-year is the default for personal property unless the 40% rule is hit. Mid-month is strictly for real estate. Full-year is not a MACRS convention.",
       how: "Sum all personal property placed in service. If Q4 additions > 40% of total, use mid-quarter tables for all assets that year.",
       when: "When a business buys a large amount of equipment late in the year.",
       source: "IRC §168(d)(3)"
@@ -159,6 +167,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "For 2024, the maximum Section 179 expense deduction is $1,220,000. It phases out dollar-for-dollar when total equipment purchases exceed $3,050,000.",
+      whyIncorrect: "$500,000 was the limit years ago. $2,500,000 is the phase-out threshold limit. It is not unlimited.",
       how: "Deduct up to the limit of qualified property placed in service, provided it doesn't create a business loss.",
       when: "When a business elects to immediately expense equipment rather than depreciate it over time.",
       source: "IRC §179(b)"
@@ -177,6 +186,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 2,
     explanation: {
       why: "Since the TCJA, Section 1031 like-kind exchanges are strictly limited to real property used in a trade or business or held for investment. Personal property and financial assets are excluded.",
+      whyIncorrect: "Inventory is explicitly excluded. Stocks/bonds are explicitly excluded. Personal property like machinery used to be eligible prior to 2018, but no longer is.",
       how: "Verify the asset is real estate (land/buildings) and not held primarily for sale.",
       when: "When a taxpayer swaps real estate to defer capital gains taxes.",
       source: "IRC §1031(a)"
@@ -195,6 +205,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "Section 1231 assets are depreciable property and real property used in a trade or business and held for MORE than 1 year.",
+      whyIncorrect: "Inventory and A/R are ordinary income assets. Investment assets are capital assets (Section 1221). 1231 requires business use AND > 1 year holding.",
       how: "Check the asset's use (business) and holding period (> 1 year).",
       when: "When selling business equipment or buildings.",
       source: "IRC §1231(b)"
@@ -213,6 +224,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 2,
     explanation: {
       why: "Section 1231 provides the 'best of both worlds': net Section 1231 gains are taxed at favorable long-term capital gain rates, while net Section 1231 losses are fully deductible as ordinary losses.",
+      whyIncorrect: "Gains are not tax-free. Capital losses/ordinary gains is the exact opposite of the 1231 benefit. They are definitely NOT exempt from depreciation recapture (which limits the 1231 gain).",
       how: "Net all 1231 gains and losses for the year. Apply ordinary treatment if a net loss, capital treatment if a net gain (subject to look-back).",
       when: "When finalizing tax treatment of business asset sales.",
       source: "IRC §1231(a)"
@@ -231,6 +243,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "Section 1245 requires that any gain on the sale of personal business property be treated as ordinary income up to the amount of depreciation previously claimed.",
+      whyIncorrect: "It is not entirely a capital gain because of recapture. Tax-free reinvestment applies to 1031s, not general sales. 20% recapture applies to Section 291 for corporations, not Section 1245.",
       how: "Compare the gain to accumulated depreciation. The lesser of the two is Section 1245 ordinary income. Any remaining gain is Section 1231 gain.",
       when: "When selling business equipment at a gain.",
       source: "IRC §1245(a)"
@@ -249,6 +262,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 2,
     explanation: {
       why: "Section 267 disallows losses from the sale or exchange of property between related parties to prevent tax avoidance.",
+      whyIncorrect: "They are completely disallowed, so they cannot be deducted as ordinary or capital losses. They are not deferred, they are permanently disallowed for the seller.",
       how: "Identify related parties (siblings, spouses, ancestors, lineal descendants, or >50% owned corporations). Disallow any loss on the sale.",
       when: "When family members or controlled entities transact at a loss.",
       source: "IRC §267(a)(1)"
@@ -267,6 +281,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "For involuntary conversions due to destruction or theft, the replacement period ends 2 years after the close of the first tax year in which any part of the gain is realized. (3 years for condemned real property).",
+      whyIncorrect: "It is calculated from the end of the tax year of the gain, not the date of the incident or payout. 1 year and 5 years are incorrect windows.",
       how: "Find the year the insurance payout creates a gain. The taxpayer has until Dec 31 two years later to buy replacement property.",
       when: "When property is destroyed and insurance proceeds exceed the adjusted basis.",
       source: "IRC §1033(a)(2)(B)"
@@ -285,6 +300,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "The mid-month convention applies to real property (27.5 or 39 years). It treats the property as being placed in service in the middle of the month of acquisition, giving 0.5 months of depreciation for that first month.",
+      whyIncorrect: "Middle of the quarter is the mid-quarter convention. July 1 is the half-year convention logic. Bonus depreciation has nothing to do with timing conventions.",
       how: "Use the appropriate column in the MACRS real property table corresponding to the month placed in service.",
       when: "When depreciating residential or nonresidential real estate.",
       source: "IRC §168(d)(2)"
@@ -303,6 +319,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 2,
     explanation: {
       why: "To prevent taxpayers from converting personal losses into business losses, the basis for depreciation (and calculating a loss) is the lesser of the adjusted basis or the FMV at the time of conversion.",
+      whyIncorrect: "'Always cost' allows artificial loss deduction if value dropped. 'Always FMV' allows tax-free step-up if value increased. 'The lesser' is the anti-abuse rule.",
       how: "Compare original cost to FMV when the asset becomes a business asset. Use the smaller number for depreciation.",
       when: "When a taxpayer turns their personal car or home into a business asset.",
       source: "Treas. Reg. §1.167(g)-1"
@@ -321,6 +338,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 2,
     explanation: {
       why: "Unlike individuals (who can deduct $3,000), corporations cannot deduct any net capital losses against ordinary income. Capital losses can only offset capital gains.",
+      whyIncorrect: "$3,000 is the rule for individuals. Full deduction is incorrect. Investment land is a capital asset, not a Section 1231 business asset.",
       how: "Carry the loss back 3 years and forward 5 years to offset corporate capital gains.",
       when: "When a C-Corporation incurs a net capital loss.",
       source: "IRC §1211(a)"
@@ -339,6 +357,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "Bonus depreciation allows businesses to immediately deduct a substantial percentage of the purchase price of eligible property (mostly MACRS property with a recovery period of 20 years or less). It is phasing down from 100% (e.g., 60% in 2024, 40% in 2025).",
+      whyIncorrect: "It does not apply to real estate. It is not an employee bonus. It accelerates depreciation; it doesn't add years to the recovery period.",
       how: "Calculate the bonus percentage on the cost basis before applying regular MACRS.",
       when: "When acquiring qualified personal business property.",
       source: "IRC §168(k)"
@@ -357,6 +376,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "Because the new property is considered a continuation of the old investment, the holding period of the property given up 'tacks' onto the holding period of the property received.",
+      whyIncorrect: "It does not start fresh because the transaction is a continuation, not a new purchase. It is not 'always' anything; if you held the old property for 1 week and traded it, the new property's holding period is 1 week.",
       how: "Add the time you held the old real estate to the time you hold the new real estate.",
       when: "When determining if a subsequent sale of the received property is long-term or short-term.",
       source: "IRC §1223(1)"
@@ -377,6 +397,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "Basis = $40k - $15k = $25k. Realized gain = $50k - $25k = $25k. Under Section 1245, gain is recaptured as ordinary income up to the amount of depreciation taken ($15k). The remaining gain ($10k) is a Section 1231 gain.",
+      whyIncorrect: "$25,000 Sec 1231 ignores recapture entirely. Reversing the amounts is wrong because recapture is capped at depreciation taken ($15k). $25,000 ordinary ignores that gain above original cost ($10k) is a capital-type 1231 gain.",
       how: "Gain = $25k. Depreciation = $15k. Ordinary (Sec 1245) = Min(Gain, Depr) = $15k. Capital (Sec 1231) = Gain - Ordinary = $10k.",
       when: "When selling depreciable personal property for a price higher than its original cost.",
       source: "IRC §1245"
@@ -395,6 +416,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 2,
     explanation: {
       why: "The look-back rule requires taxpayers to recapture net Section 1231 gains as ordinary income to the extent of any unrecaptured net Section 1231 losses from the prior 5 years.",
+      whyIncorrect: "$10k capital ignores the lookback rule. $10k ordinary over-recaptures. Reversing the character treats the prior loss as a limit on ordinary income rather than a cause for recapture.",
       how: "Gain = $10k. Prior unrecaptured losses = $4k. Recapture $4k as ordinary income. The remaining $6k is long-term capital gain.",
       when: "When a taxpayer realizes a net Section 1231 gain and had 1231 losses in the last 5 years.",
       source: "IRC §1231(c)"
@@ -413,6 +435,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "When FMV < Basis at the time of a gift, 'dual basis' rules apply. For determining a loss, the basis is the FMV ($15k). Sale price ($12k) - Loss Basis ($15k) = $3,000 loss.",
+      whyIncorrect: "$8,000 loss incorrectly uses the donor's higher basis, which is disallowed for losses. $0 is incorrect because the sale price is lower than both bases. $5,000 is the unrealized loss at the time of the gift, not the recognized loss on sale.",
       how: "Because sale price ($12k) is less than FMV at gift ($15k), use FMV as basis. Loss = $12k - $15k = ($3,000).",
       when: "When gifted property that declined in value before the gift is sold at an even lower price.",
       source: "IRC §1015(a)"
@@ -431,6 +454,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 2,
     explanation: {
       why: "Dual basis rules: For a gain, basis is $20k. For a loss, basis is $15k. The sale price ($18k) falls between the two bases. Therefore, no gain or loss is recognized.",
+      whyIncorrect: "$2,000 loss incorrectly uses the gain basis. $3,000 gain incorrectly uses the loss basis. Since it is in the 'dead zone', no gain or loss is recognized.",
       how: "Since $18k < $20k, there's no gain. Since $18k > $15k, there's no loss. Result is $0.",
       when: "When selling gifted property where the sale price is between the donor's basis and the FMV at the time of the gift.",
       source: "IRC §1015(a)"
@@ -449,6 +473,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "Father's $10k loss was disallowed. Son's basis is his purchase price ($40k). Son's realized gain is $55k - $40k = $15k. Son can use Father's previously disallowed $10k loss to offset his gain. Recognized gain = $15k - $10k = $5,000.",
+      whyIncorrect: "$15k ignores the related party loss offset rule. $0 gain assumes the loss completely wiped the gain, but it only reduces it. $10k loss is completely incorrect.",
       how: "Calculate subsequent owner's realized gain. Reduce this gain (but not below zero) by the related party's previously disallowed loss.",
       when: "When property acquired from a related party who took a disallowed loss is later sold at a gain.",
       source: "IRC §267(d)"
@@ -467,6 +492,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "Net mortgage relief is treated as cash 'boot' received. Mortgage given up ($20k) - Mortgage assumed ($10k) = $10k net boot received. Realized gain = ($80k FMV + $10k net boot) - $50k Basis = $40k. Recognized gain = Lesser of Realized Gain ($40k) or Boot Received ($10k).",
+      whyIncorrect: "$0 ignores the net boot. $20k ignores the netting of liabilities. $40k is the realized gain, but the recognized gain is limited to the boot received.",
       how: "Net the liabilities. If liability given up > liability assumed, the difference is boot received. Recognize gain up to boot.",
       when: "When real estate with mortgages is exchanged in a 1031.",
       source: "Treas. Reg. §1.1031(b)-1(c)"
@@ -485,6 +511,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "Formula for basis of new property: Old Basis ($50k) + Gain Recognized ($10k) - Boot Received ($10k) + Boot Paid ($0) = $50,000. Alternatively: FMV of new ($80k) - Deferred Gain ($30k) = $50,000.",
+      whyIncorrect: "$80,000 is FMV, not basis. $60,000 fails to subtract boot received. $40,000 incorrectly treats boot.",
       how: "Use the formula: Old Basis + Gain Recognized - Boot Received = New Basis.",
       when: "Calculating basis after a 1031 exchange.",
       source: "IRC §1031(d)"
@@ -503,6 +530,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "The cost exceeds the $3,050,000 threshold by $150,000. The maximum deduction ($1,220,000) is reduced dollar-for-dollar by this excess. $1,220,000 - $150,000 = $1,070,000.",
+      whyIncorrect: "$1,220,000 ignores the phase-out. $150,000 is the phase-out amount, not the deduction. $0 over-phases out.",
       how: "Excess = $3,200,000 - $3,050,000 = $150,000. Reduced Limit = $1,220,000 - $150,000 = $1,070,000.",
       when: "When a business makes massive equipment purchases exceeding the Section 179 phase-out threshold.",
       source: "IRC §179(b)(2)"
@@ -521,6 +549,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "For real estate depreciated using straight-line (which all MACRS real estate is), there is no Section 1250 ordinary income recapture. Instead, the gain attributable to the depreciation ($100k) is 'Unrecaptured Section 1250 gain', treated as a Section 1231 gain but taxed at a maximum rate of 25%. The remaining $100k is regular Section 1231 gain (0/15/20%).",
+      whyIncorrect: "Real estate doesn't trigger 1245-style ordinary income recapture on straight-line depreciation. It is not all ordinary, nor is it all 15/20% capital gain due to the 25% unrecaptured 1250 bracket.",
       how: "Gain = $200k. Unrecaptured 1250 (max 25%) = Depreciation taken ($100k). Remaining gain ($100k) = regular capital gain rates.",
       when: "When individuals sell depreciated real estate at a gain.",
       source: "IRC §1(h)(1)(D)"
@@ -538,7 +567,8 @@ export const r2Questions: Question[] = [
     ],
     correctAnswer: 2,
     explanation: {
-      why: "UNICAP requires capitalizing all direct costs and a portion of indirect costs that benefit the production or resale activities. Quality control is an indirect cost that must be capitalized. Marketing, general management, and R&D are expressly excluded.",
+      why: "UNICAP requires capitalizing all direct costs and a portion of indirect costs that benefit the production or resale activities. Quality control is an indirect cost that must be capitalized.",
+      whyIncorrect: "Marketing, general management, and R&D are expressly excluded from UNICAP capitalization and are immediately expensed.",
       how: "Allocate factory overhead, quality control, and indirect materials to inventory rather than expensing them.",
       when: "When calculating COGS and ending inventory for large manufacturers or retailers.",
       source: "Treas. Reg. §1.263A-1"
@@ -557,6 +587,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 2,
     explanation: {
       why: "Acquired Section 197 intangibles (goodwill, patents, trademarks, customer lists) are amortized strictly on a straight-line basis over exactly 15 years (180 months), regardless of their actual or legal useful life.",
+      whyIncorrect: "Intangibles are not expensed immediately. Tax law overrides accounting/legal life by imposing a rigid 15-year statutory period. It is absolutely amortizable.",
       how: "Divide the cost by 180 months to get the monthly amortization deduction.",
       when: "When a business acquires intangible assets, usually in a business buyout.",
       source: "IRC §197(a)"
@@ -575,6 +606,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "If a home is rented for fewer than 15 days in a year, it is treated entirely as a personal residence. The rental income is excluded from gross income, and no rental expenses (like depreciation or utilities) can be deducted.",
+      whyIncorrect: "If rented for less than 15 days, it is completely exempt from taxation, but you lose all rental expense deductions.",
       how: "Ignore the 12 days of rental income on the tax return. Mortgage interest and property taxes remain deductible on Schedule A.",
       when: "When taxpayers briefly rent out their homes (e.g., during a local sporting event like the Super Bowl).",
       source: "IRC §280A(g)"
@@ -593,6 +625,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "When a corporation purchases property by issuing its own stock (outside of a Section 351 formation), the basis of the property received is its Fair Market Value on the date of the transaction.",
+      whyIncorrect: "$100k represents the stock's par/stated value, not the asset's FMV. $0 is incorrect. Transferor's basis only applies in a tax-free 351 exchange.",
       how: "Record the asset at the $120,000 FMV. The corporation recognizes no gain/loss on issuing its own stock (Sec 1032).",
       when: "When corporate stock is used as currency to buy assets.",
       source: "IRC §1012; IRC §1032"
@@ -611,6 +644,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 2,
     explanation: {
       why: "When a corporation distributes appreciated property as a dividend, it must recognize gain as if it had sold the property for its FMV. (Note: A corporation cannot recognize a loss on a distribution).",
+      whyIncorrect: "Non-recognition applies to the shareholder, not the corporation. The character of the gain depends on the asset; it's not automatically ordinary. The corporation recognizes the gain, not the shareholder.",
       how: "Gain = FMV ($50k) - Basis ($20k) = $30k. The character depends on the type of asset distributed.",
       when: "When property dividends are issued to shareholders.",
       source: "IRC §311(b)"
@@ -629,6 +663,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "Under Section 357(c), if liabilities assumed by the corporation ($60k) exceed the total adjusted basis of the property transferred ($40k), the transferor must recognize gain to the extent of the excess ($20k).",
+      whyIncorrect: "$0 ignores the liability excess rule. $60k is the total liability, not the excess. $100k is the FMV.",
       how: "Gain = Liabilities Assumed - Total Basis = $60k - $40k = $20k.",
       when: "When incorporating a business and transferring heavily leveraged assets.",
       source: "IRC §357(c)"
@@ -647,6 +682,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 2,
     explanation: {
       why: "A partner who receives a capital interest in exchange for services must recognize ordinary income equal to the FMV of the services ($10k). Their outside basis is the cash contributed ($10k) plus the income recognized ($10k) = $20,000.",
+      whyIncorrect: "Services for equity trigger income; non-recognition applies only to property. The income is ordinary compensation, not capital gain. Basis increases when income is recognized.",
       how: "Report $10k as ordinary income. Calculate basis: Cash + Income Recognized.",
       when: "When 'sweat equity' is exchanged for a partnership capital interest.",
       source: "IRC §83; Treas. Reg. §1.721-1(b)"
@@ -664,7 +700,8 @@ export const r2Questions: Question[] = [
     ],
     correctAnswer: 1,
     explanation: {
-      why: "The MACRS 5-year half-year table rate for Year 1 is 20%. Therefore, $100,000 * 20% = $20,000. (The 20% rate already incorporates the half-year factor: 1/5 = 20% straight line * 200% double declining = 40% full year * 1/2 year = 20%).",
+      why: "The MACRS 5-year half-year table rate for Year 1 is 20%. Therefore, $100,000 * 20% = $20,000. (The 20% rate already incorporates the half-year factor).",
+      whyIncorrect: "$10,000 incorrectly applies a half-year factor on top of the table rate. $50,000 assumes 50% bonus. $16,000 is incorrect.",
       how: "Multiply the unadjusted basis by the exact MACRS table percentage.",
       when: "When applying standard MACRS tables to machinery/equipment.",
       source: "Rev. Proc. 87-57"
@@ -682,7 +719,8 @@ export const r2Questions: Question[] = [
     ],
     correctAnswer: 2,
     explanation: {
-      why: "A partner's basis is decreased by distributions, their share of partnership losses, and their share of non-deductible, non-capitalizable expenses (e.g., fines/penalties). Tax-exempt income and liability increases *increase* basis.",
+      why: "A partner's basis is decreased by distributions, their share of partnership losses, and their share of non-deductible, non-capitalizable expenses (e.g., fines/penalties).",
+      whyIncorrect: "Tax-exempt income increases basis so it isn't taxed upon sale. An increase in liabilities increases a partner's basis. Contributions increase basis.",
       how: "Adjust basis downward for the partner's K-1 share of non-deductible expenses to prevent an artificial loss upon sale of the partnership interest.",
       when: "When calculating year-end partnership basis limits.",
       source: "IRC §705(a)"
@@ -701,6 +739,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 2,
     explanation: {
       why: "A Type B reorganization is a 'stock-for-stock' acquisition where the acquiring corporation uses *solely* its voting stock to acquire the target's stock, and immediately after the transaction, has 80% or more control of the target.",
+      whyIncorrect: "Mergers are Type A. Asset acquisitions are Type C. Transfer to controlled corp is a Section 351 or Type D.",
       how: "Verify the consideration is *only* voting stock and the 80% control threshold is met.",
       when: "When corporations acquire subsidiaries via stock swaps.",
       source: "IRC §368(a)(1)(B)"
@@ -719,6 +758,7 @@ export const r2Questions: Question[] = [
     correctAnswer: 1,
     explanation: {
       why: "To prevent C-Corps from electing S-status just to sell appreciated assets tax-free at the corporate level, the Built-In Gains (BIG) tax imposes the highest corporate tax rate (currently 21%) on the net recognized built-in gain if sold within 5 years of the election.",
+      whyIncorrect: "Flow-through applies to regular S-Corp gains, not BIG. It is not tax-free. BIG does not terminate the S-election.",
       how: "Determine the FMV vs Basis at the time of S-election. If sold within 5 years, apply the corporate tax rate to that built-in gain at the entity level.",
       when: "When a former C-Corp sells old assets after converting to an S-Corp.",
       source: "IRC §1374"

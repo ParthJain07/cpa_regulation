@@ -62,6 +62,9 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             <strong>Why:</strong> {question.explanation.why}
           </div>
           <div className="explanation-block">
+            <strong>Why others are wrong:</strong> {question.explanation.whyIncorrect}
+          </div>
+          <div className="explanation-block">
             <strong>How:</strong> {question.explanation.how}
           </div>
           <div className="explanation-block">
