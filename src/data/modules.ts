@@ -3,6 +3,8 @@ import { r1Questions } from './r1_questions';
 import { r2Questions } from './r2_questions';
 import { r3Questions } from './r3_questions';
 import { r4Questions } from './r4_questions';
+import { r5Questions } from './r5_questions';
+import { r6Questions } from './r6_questions';
 
 export interface Module {
   id: string;
@@ -30,5 +32,15 @@ export const modules: Module[] = [
     id: 'R4',
     title: 'Professional Responsibilities & Tax Procedures',
     questions: r4Questions,
+  },
+  {
+    id: 'R5',
+    title: 'Business Law & Contracts',
+    questions: r5Questions,
+  },
+  {
+    id: 'R6',
+    title: 'Business Structures & Bankruptcy',
+    questions: r6Questions,
   }
 ];
