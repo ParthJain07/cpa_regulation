@@ -5,6 +5,7 @@ import { r3Questions } from './r3_questions';
 import { r4Questions } from './r4_questions';
 import { r5Questions } from './r5_questions';
 import { r6Questions } from './r6_questions';
+import { r6Set2Questions } from './r6_set2_questions';
 
 export interface Module {
   id: string;
@@ -42,5 +43,10 @@ export const modules: Module[] = [
     id: 'R6',
     title: 'Business Structures & Bankruptcy',
     questions: r6Questions,
+  },
+  {
+    id: 'R6-2',
+    title: 'Business Structures & Bankruptcy (Set 2)',
+    questions: r6Set2Questions,
   }
 ];
