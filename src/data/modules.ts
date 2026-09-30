@@ -1,6 +1,7 @@
 import type { Question } from './r1_questions';
 import { r1Questions } from './r1_questions';
 import { r2Questions } from './r2_questions';
+import { r2Set2Questions } from './r2_set2_questions';
 import { r3Questions } from './r3_questions';
 import { r4Questions } from './r4_questions';
 import { r5Questions } from './r5_questions';
@@ -23,6 +24,11 @@ export const modules: Module[] = [
     id: 'R2',
     title: 'Property Taxation',
     questions: r2Questions,
+  },
+  {
+    id: 'R2-2',
+    title: 'Property Taxation (Set 2)',
+    questions: r2Set2Questions,
   },
   {
     id: 'R3',
